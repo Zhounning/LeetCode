@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Merge
  */
@@ -64,13 +67,67 @@ public class Merge {
 
     } 
 
+
+    // 给出一个区间的集合，请合并所有重叠的区间。
+
+    // 示例 1:
+    
+    // 输入: [[1,3],[2,6],[8,10],[15,18]]
+    // 输出: [[1,6],[8,10],[15,18]]
+    // 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+    // 示例 2:
+    
+    // 输入: [[1,4],[4,5]]
+    // 输出: [[1,5]]
+    // 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+    // 通过次数62,647提交次数154,110
+    //https://leetcode-cn.com/problems/merge-intervals/description/
+    public static int[][] merge(int[][] intervals) {
+        if(intervals==null)
+            return null;
+
+        //进行排序
+        for (int i = 0; i < intervals.length; i++) {
+            int [] temp = intervals[i];
+            int index = i;
+            for (int j = i+1; j < intervals.length; j++) {
+                if(temp[0]>intervals[j][0]){
+                    temp = intervals[j];
+                    index = j;
+                }
+            }
+
+            intervals[index] = intervals[i];
+            intervals[i] = temp;
+        }
+
+        List<int[]>resLsit= new ArrayList<>();
+        resLsit.add(intervals[0]);
+        for (int i = 1; i < intervals.length; i++) {
+            int []temp =resLsit.get(resLsit.size()-1);
+            if(temp[1]<intervals[i][0])
+            resLsit.add(intervals[i]);
+            else if(temp[1]>=intervals[i][0] && temp[1]<intervals[i][1]){
+                temp[1] = intervals[i][1];
+                resLsit.set(resLsit.size()-1, temp);
+            }
+        }
+
+        int [][]res = new int [resLsit.size()][2];
+        for (int i = 0; i < resLsit.size(); i++) {
+            res[i] = resLsit.get(i);
+        }
+
+
+        return res;
+    }
+
+
+
     public static void main(String[] args) {
-        int[] nums1 = {1,2,3,0,0,0};
-        int[] nums2 = {2,5,6};
-        int m = 3;
-        int n =3;
-        Merge M =new Merge();
-        M.merge(nums1, m, nums2, n);
-       System.out.println(nums1);
+       int [][] intervals = new int [][] {{1,3},{2,6},{8,10},{15,18}};
+        merge(intervals);
+            
+            
     }
 }
