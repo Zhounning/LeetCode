@@ -54,7 +54,7 @@ public class Permute {
             nums[n] = nums[i];
             nums[i] = temp;
         }
-        // ans.remove(ans.size()-1);   //注意这个
+       
     }
 
     public void backtrack2(int [] nums,List<Integer>ans,int n){
