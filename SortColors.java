@@ -76,6 +76,7 @@ public class SortColors {
                 //这里注意curent不需要++
             }else{
                 curent++;
+                //因为curr左边的值已经扫描过了，所以curr要++继续扫描下一位，而与p2交换的值，curr未扫描，要停下来扫描一下，所以curr不用++。
             }
             
         }
