@@ -88,7 +88,7 @@ public class PermuteUnique {
     
 
     public static void main(String[] args) {
-        int []nums = {1,1,2};
+        int []nums = {1,1,1,2};
         PermuteUnique permuteUnique =new PermuteUnique();
         permuteUnique.permuteUnique(nums);    
 
