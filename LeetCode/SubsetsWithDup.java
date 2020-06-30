@@ -1,6 +1,10 @@
+package LeetCode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * SubsetsWithDup
@@ -31,10 +35,11 @@ public class SubsetsWithDup {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
         List<Integer>ans = new ArrayList<>();
-        dfs(nums,ans,0);
+        dfs2(nums,ans,0);
         return res;
     }
 
+    //以前写的
     public void dfs(int []nums,List<Integer>ans,int n){
         res.add(new ArrayList(ans));
         for (int i = n; i < nums.length; i++) {
@@ -48,10 +53,27 @@ public class SubsetsWithDup {
         
     }
 
+    //总结的时候写的
+    public void dfs2(int []nums,List<Integer>ans,int n){
+        res.add(new ArrayList(ans));
+        Set<Integer> intSet = new HashSet<Integer>();
+        for (int i = n; i < nums.length; i++) {
+             //剪枝情况
+             //这个判断需要理解
+            if (!intSet.contains(nums[i])){
+                intSet.add(nums[i]);
+                ans.add(nums[i]);
+                dfs2(nums, ans, i+1);
+               ans.remove(ans.size()-1);
+            }
+           
+        }
+    }
+
     public static void main(String[] args) {
         SubsetsWithDup s = new SubsetsWithDup();
-        int[] nums = new int[]{1,2,2};
-        s.subsetsWithDup(nums);
+        int[] nums = new int[]{4,4,4,1,4};
+        System.out.println(s.subsetsWithDup(nums));
     }
 
 
