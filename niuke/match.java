@@ -29,7 +29,7 @@ public class match {
                 return matchCore(sStart, pStart+2);
             }
         }
-        if (sStart!=str.length && pattern[pStart]==str[sStart]||(pattern[pStart]=='.' ))
+        if (sStart!=str.length && (pattern[pStart]==str[sStart]||(pattern[pStart]=='.' )))
             return matchCore(sStart+1, pStart+1);
 
         return false;
@@ -37,8 +37,8 @@ public class match {
 
     public static void main(String[] args) {
         match m = new match();
-        String str ="";
-        String pattern =".*";
+        String str ="a";
+        String pattern ="a*";
         System.out.println(m.Match(str.toCharArray(), pattern.toCharArray()));
 
     }
