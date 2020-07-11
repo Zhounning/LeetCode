@@ -49,7 +49,6 @@ public class isMatch {
     public boolean IsMatch2(String s, String p){
         int m = s.length();
         int n = p.length();
-
         boolean[][] f = new boolean[m + 1][n + 1];
         f[0][0] = true;
         for (int i = 0; i <= m; ++i) {
@@ -79,68 +78,6 @@ public class isMatch {
         }
         return s.charAt(i - 1) == p.charAt(j - 1);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 
     public static void main(String[] args) {
