@@ -2,7 +2,7 @@ package leetCode;
 
 public class mergeKLists {
 
-    //采用遍历的办法，效率不高，但是能够通过
+    //采用迭代的办法，效率不高，但是能够通过
     public ListNode MergeKLists(ListNode[] lists) {
         ListNode head = null;
         if(lists!=null && lists.length>0){
@@ -50,7 +50,7 @@ public class mergeKLists {
     }
 
     ListNode[] lists;
-    //分支方法
+    //分支思想，采用递归完成
     public ListNode MergeKLists2(ListNode[] lists) {
         this.lists = lists;
         if(lists!=null && lists.length>0) return dfs(0,lists.length-1);
