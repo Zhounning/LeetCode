@@ -1,3 +1,5 @@
+package leetCode;
+
 class Node {
     public int val;
     public Node left;
