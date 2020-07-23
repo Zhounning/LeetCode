@@ -1,6 +1,10 @@
 package leetCode;
 
-public class connect2{
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class connect2 {
+    //使用层次遍历，复杂度比较高
     public Node connect(Node root) {
         if (root == null) {
             return root;
@@ -8,7 +12,7 @@ public class connect2{
         
         Queue<Node> Q = new LinkedList<Node>(); 
         Q.add(root);
-        
+        //利用层次遍历
         while (Q.size() > 0) {
             
             int size = Q.size();
@@ -28,5 +32,46 @@ public class connect2{
                     Q.add(node.right);
                 }
             }
+        }
+        return root;
+    }
+
+    //通过递归，第N层利用第N-1层
+    public Node Connect2(Node root) {
+        if (root == null || (root.right == null && root.left == null)) {
+            return root;
+        }
+        if (root.left != null && root.right != null) {
+            root.left.next = root.right;
+            root.right.next = getNextNoNullChild(root);
+        }
+        if (root.left == null) {
+            root.right.next = getNextNoNullChild(root);
+        }
+        if (root.right == null) {
+            root.left.next = getNextNoNullChild(root);
+        }
+
+        //这里要注意：先递归右子树，否则右子树根节点next关系没建立好，左子树到右子树子节点无法正确挂载
+        root.right = Connect2(root.right);
+        root.left = Connect2(root.left);
+
+        return root;
+    }
+
+    /**
+     * 一路向右找到有子节点的根节点
+     */
+    private  Node getNextNoNullChild(Node root) {
+        while (root.next != null) {
+            if (root.next.left != null) {
+                return root.next.left;
+            }
+            if (root.next.right != null) {
+                return root.next.right;
+            }
+            root = root.next;
+        }
+        return null;
     }
 }

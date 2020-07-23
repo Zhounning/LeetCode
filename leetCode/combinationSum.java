@@ -42,6 +42,6 @@ public class combinationSum {
         combinationSum c =new combinationSum();
         int[] candidates = {2,3,5};
         int target = 8;
-        System.out.println(c.combinationSum(candidates, target));
+        System.out.println(c.CombinationSum(candidates, target));
     }
 }
