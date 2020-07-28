@@ -1,3 +1,18 @@
 {
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "sqltools.connections": [
+        {
+            "database": "springboot",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "mysql",
+            "password": "123456",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "zhouning"
+        }
+    ]
 }
