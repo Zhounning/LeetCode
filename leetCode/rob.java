@@ -18,6 +18,17 @@ public class rob {
         return dp[n - 1];
     }
 
+    // 使用滚动数组
+    public int Rob2(int[] nums) {
+        int pre = 0, cur = 0, tmp;
+        for (int num : nums) {
+            tmp = cur;
+            cur = Math.max(pre + num, cur);
+            pre = tmp;
+        }
+        return cur;
+    }
+
     public static void main(String[] args) {
         rob r = new rob();
         int[] nums = { 2, 7, 9, 3, 1 };
