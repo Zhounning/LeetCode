@@ -2,20 +2,20 @@ package leetCode;
 
 public class maxProfit2 {
 
-    //贪心思想，见到价格高就抛售
+    // 贪心思想，见到价格高就抛售
     public int maxProfit(int[] prices) {
         int profit = 0;
 
-        for(int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i -1]) {
-                profit  = profit + prices[i] - prices[i - 1];
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                profit = profit + prices[i] - prices[i - 1];
             }
         }
-    
-        return profit;    
+
+        return profit;
     }
 
-    //动态规划
+    // 动态规划
     // 作者：liweiwei1419
     // 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/solution/tan-xin-suan-fa-by-liweiwei1419-2/
     public int maxProfit3(int[] prices) {
@@ -40,7 +40,7 @@ public class maxProfit2 {
         return dp[len - 1][0];
     }
 
-    //使用滚动变量
+    // 使用滚动变量
     public int maxProfit4(int[] prices) {
         int len = prices.length;
         if (len < 2) {
