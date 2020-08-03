@@ -1,7 +1,7 @@
 package leetCode;
 
 public class majorityElement {
-    public int majorityElement(int[] nums) {
+    public int MajorityElement(int[] nums) {
         int res = nums[0];
         int count = 0;
 

@@ -1,7 +1,9 @@
 package leetCode;
 
 public class countDigitOne {
+
     public int CountDigitOne(int n) {
+
         if (n <= 0)
             return 0;
         int count = 0;
