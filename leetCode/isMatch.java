@@ -87,32 +87,32 @@ public class isMatch {
      * @param s
      * @param p
      * @return
+     * @since 2020-08-07 重做
      */
     public boolean isMatch3(String s, String p) {
-        int n = s.length();
-        int m = p.length();
-        boolean[][] dp = new boolean[n + 1][m + 1];
+        if (p.startsWith("*")) {
+            return false;
+        }
+        int m = s.length();
+        int n = p.length();
+        // 空字符串需要考虑在内
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        // 空对空
         dp[0][0] = true;
-
-        for (int i = 0; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 1; j < n; j++) {
                 if (p.charAt(j - 1) == '*') {
-                    // 将 第j、j-1个字符当作空，也就是将 * 和前面一个字符当作空
+                    // 先当作空
                     dp[i][j] = dp[i][j - 2];
-                    // 判断s的第i个字符 和 p的第j-1个字符是否匹配，也就是判断 * 前面一个字符是否匹配
                     if (matches(s, p, i, j - 1)) {
-                        // 分别代表 *号前面的字符出现多次、1次、0次
-                        dp[i][j] = dp[i - 1][j] || dp[i][j - 1] || dp[i][j - 2];
-                        // 当然也可以写成 dp[i][j] = dp[i - 1][j] || dp[i - 1][j - 2] || dp[i][j - 2]
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
                     }
+
                 } else if (matches(s, p, i, j)) {
-                    // 说明 s中第i个字符 和 p中第j个字符匹配
                     dp[i][j] = dp[i - 1][j - 1];
                 }
             }
         }
-
-        return dp[n][m];
     }
 
     public static void main(String[] args) {

@@ -49,6 +49,7 @@ public class myAtoi {
         stateMap.put("end", new String[] { "end", "end", "end" });
     }
 
+    /*********下面为状态机部分     */
     String state = "start";
     int sign = 1;
     long ans = 0;
