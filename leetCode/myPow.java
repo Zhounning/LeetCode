@@ -5,7 +5,7 @@ package leetCode;
  */
 public class myPow {
     //使用快幂算法
-    public double myPow(double x, int n) {
+    public double MyPow(double x, int n) {
         long N = n;
         return N >= 0 ? fastpow(x, N) : 1.0 / fastpow(x, -N);
     }
