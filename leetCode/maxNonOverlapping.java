@@ -14,7 +14,7 @@ public class maxNonOverlapping {
             sum += num;
             if (map.containsKey(sum - target)) {
                 count++;
-                //从新还是求前缀和
+                // 从新还是求前缀和
                 sum = 0;
                 map = new HashMap<>();
             }

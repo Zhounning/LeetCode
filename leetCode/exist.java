@@ -1,19 +1,19 @@
 package leetCode;
+
 /**
- * Exist
- * 2020-07-14
+ * Exist 2020-07-14
  */
 public class exist {
-   
-    private int[][] direction = {{-1, 0}, {0, -1}, {0, 1}, {1, 0}};
-     // 盘面上有多少行
-     private int m;
-     // 盘面上有多少列
-     private int n;
-     private String word;
-     private char[][] board;
-     private boolean[][] marked;
- 
+
+    private int[][] direction = { { -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 } };
+    // 盘面上有多少行
+    private int m;
+    // 盘面上有多少列
+    private int n;
+    private String word;
+    private char[][] board;
+    private boolean[][] marked;
+
     public boolean Exist(char[][] board, String word) {
 
         m = board.length;
@@ -34,10 +34,9 @@ public class exist {
         }
         return false;
 
-
     }
 
-    public boolean dfs(int i,int j,int start){
+    public boolean dfs(int i, int j, int start) {
         if (start == word.length() - 1) {
             return board[i][j] == word.charAt(start);
         }
@@ -62,15 +61,8 @@ public class exist {
         return x >= 0 && x < m && y >= 0 && y < n;
     }
 
-
-
-
     public static void main(String[] args) {
-        char[][] board = new char[][]  {
-            { 'A','B','C','E'},
-            { 'S','F','C','S'},
-            { 'A','D','E','E'}
-        };
+        char[][] board = new char[][] { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
         String word = "ABCB";
         // exist(board, word);
     }
