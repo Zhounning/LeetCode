@@ -1,13 +1,13 @@
 package leetCode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class minCost {
     public int MinCost(int n, int[] cuts) {
         List<Integer> list = new ArrayList<>();
+        
         list.add(0);
         list.add(n);
         for (int num : cuts) {
