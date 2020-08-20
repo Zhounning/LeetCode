@@ -73,7 +73,7 @@ public class closestToTarget {
                 ans = Math.min(ans, Math.abs(query(1, i, n) - target));
             } else {
                 ans = Math.min(ans, Math.abs(query(1, i, l) - target));
-                ans = Math.min(ans, Math.abs(query(1, i, l+1) - target));
+                ans = Math.min(ans, Math.abs(query(1, i, l + 1) - target));
             }
         }
         return ans;
@@ -81,7 +81,7 @@ public class closestToTarget {
 
     public static void main(String[] args) {
         closestToTarget c = new closestToTarget();
-        int[] arr = { 1000000,1000000,1000000};
+        int[] arr = { 1000000, 1000000, 1000000 };
         int target = 1;
         System.out.println(c.ClosestToTarget(arr, target));
     }

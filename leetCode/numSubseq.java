@@ -1,16 +1,19 @@
 package leetCode;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class numSubseq {
     public int NumSubseq(int[] nums, int target) {
+        Arrays.sort(nums);
+        Map<Integer, Integer> map = new HashMap<>();
 
-        long res = 0;
-        int mod = 1000000000 + 7;
-
-        return (int) res;
+        int l = 0, count = 0;
+        long result = 0;
+        for (int r = 0; r < nums.length; ++r) {
+        }
+        return (int) result;
     }
 
     public static void main(String[] args) {
