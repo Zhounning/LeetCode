@@ -1,51 +1,57 @@
 package leetCode;
 
-import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class avoidFlood {
     public int[] AvoidFlood(int[] rains) {
-        int n = rains.length;
-        Set<Integer> set = new HashSet<>();
-        int res[] = new int[n];
-        Arrays.fill(res, 1);
-        int count = 0;// 抽干的机会
-        int index = 0;
-        for (int i = 0; i < rains.length; i++) {
-            if (rains[i] > 0) {
-                // 说明这一天下雨
-                // 下雨什么都干不了
-                res[i] = -1;
+        int[] ans = new int[rains.length];
+        Arrays.fill(ans, 1);
+        Map<Integer, Integer> water = new HashMap<>();
+        List<Integer> zero = new ArrayList<>();
 
-                if (set.contains(rains[i])) {
-                    // 说明湖泊有水
-                    if (count > 0) {
-                        // 说明可以抽干
-                        res[index + 1] = rains[i];
-                        index++;    
-                    } else {
-                        return new int[0];
-                    }
-                } else {
-                    set.add(rains[i]);
-                }
-                if (count == 0) {
-                    index = i;
-                }
-            } else {
-                // 说明这一天不下雨，那么需要抽干一个湖
-                // 机会加一
-                count++;
+        for (int i = 0; i < rains.length; i++) {
+            int r = rains[i];
+            // 不下雨
+            if (r == 0) {
+                zero.add(i);
+                continue;
             }
+            // 下雨
+            if (water.containsKey(r)) {
+                int target = water.get(r);
+                int left = 0, right = zero.size() - 1;
+                // 二分查找日期进行填写
+                // 找到前面r下雨后的不下雨天进行填写
+                while (left <= right) {
+                    int mid = (left + right) / 2;
+                    if (zero.get(mid) < target) {
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
+                }
+
+                if (left < 0 || left >= zero.size()) {
+                    return new int[] {};
+                }
+                ans[zero.get(left)] = r;
+                zero.remove(left);
+            }
+            water.put(r, i);
+            ans[i] = -1;
+
         }
-        return res;
+        return ans;
     }
 
     public static void main(String[] args) {
         avoidFlood a = new avoidFlood();
-        int[] rains = { 1, 0, 2, 0, 2, 1 };
+        int[] rains = { 69, 0, 0, 0, 69 };
         System.out.println(Arrays.toString(a.AvoidFlood(rains)));
     }
 }
