@@ -1,63 +1,57 @@
 package leetCode;
 
 /**
- * NumArray
+ * NumArray 使用树状数组完成
  */
 public class NumArray {
+    int[] nums;
     int[] tree;
     int n;
 
+    int lowbit(int x) {
+        return x & (-x);
+    }
+
+    int sum(int x) {
+        int ans = 0;
+        while (x > 0) {
+            ans += tree[x];
+            x -= lowbit(x);
+        }
+        return ans;
+    }
+
+    void add(int x, int c) {
+        // nums[x] += c;
+        while (x <= n) {
+            tree[x] += c;
+            x += lowbit(x);
+        }
+    }
+
     public NumArray(int[] nums) {
-        if (nums.length > 0) {
-            n = nums.length;
-            tree = new int[n * 2];
-            buildTree(nums);
+        n = nums.length;
+        tree = new int[n + 1];
+        for (int i = 0; i < nums.length; i++) {
+            add(i + 1, nums[i]);
         }
+        this.nums = nums;
     }
 
-    private void buildTree(int[] nums) {
-        for (int i = n, j = 0; i < 2 * n; i++, j++)
-            tree[i] = nums[j];
-        for (int i = n - 1; i > 0; --i)
-            tree[i] = tree[i * 2] + tree[i * 2 + 1];
+    public void update(int i, int val) {
+        add(i + 1, val - nums[i]);
+        nums[i] = val;
     }
 
-    public void update(int pos, int val) {
-        pos += n;
-        tree[pos] = val;
-        while (pos > 0) {
-            int left = pos;
-            int right = pos;
-            if (pos % 2 == 0) {
-                right = pos + 1;
-            } else {
-                left = pos - 1;
-            }
-            // parent is updated after child is updated
-            tree[pos / 2] = tree[left] + tree[right];
-            pos /= 2;
-        }
-
+    public int sumRange(int i, int j) {
+        return sum(j + 1) - sum(i);
     }
 
-    public int sumRange(int l, int r) {
-        // get leaf with value 'l'
-        l += n;
-        // get leaf with value 'r'
-        r += n;
-        int sum = 0;
-        while (l <= r) {
-            if ((l % 2) == 1) {
-                sum += tree[l];
-                l++;
-            }
-            if ((r % 2) == 0) {
-                sum += tree[r];
-                r--;
-            }
-            l /= 2;
-            r /= 2;
-        }
-        return sum;
+    public static void main(String[] args) {
+        int[] nums = { 1, 3, 5 };
+        NumArray n = new NumArray(nums);
+        System.out.println(n.sumRange(0, 2));
+        n.update(1, 2);
+        System.out.println(n.sumRange(0, 2));
     }
 }
