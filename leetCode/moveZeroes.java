@@ -7,20 +7,19 @@ public class moveZeroes {
         if (nums == null || nums.length == 0) {
             return;
         }
-        // 指向0的上一个位置
+
         int last = -1;
-        int length = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                nums[last + 1] = nums[i];
                 last++;
-                length++;
+                nums[last] = nums[i];
             }
         }
 
-        for (int i = length; i < nums.length; i++) {
+        for (int i = last+1; i < nums.length; i++) {
             nums[i] = 0;
         }
+
     }
 
     public static void main(String[] args) {
