@@ -1,4 +1,4 @@
-package niuke.wangyi;
+package nowcoder.wangyi;
 
 public class wy79 {
     public static void main(String[] args) {

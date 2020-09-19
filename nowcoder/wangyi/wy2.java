@@ -1,4 +1,4 @@
-package niuke.wangyi;
+package nowcoder.wangyi;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

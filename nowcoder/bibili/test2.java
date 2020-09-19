@@ -1,4 +1,4 @@
-package niuke.bibili;
+package nowcoder.bibili;
 
 import java.util.Arrays;
 import java.util.Comparator;
