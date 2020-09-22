@@ -9,3 +9,4 @@
 ## 不懂的题
 * [剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/)
 * [快幂](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/)
+* [表示数值的字符串](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/)
