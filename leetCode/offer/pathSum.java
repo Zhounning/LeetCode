@@ -34,8 +34,8 @@ public class pathSum {
     }
 
     public static void main(String[] args) {
-        pathSum p = new pathSum();
-        TreeNode root = new TreeNode(5);
+        // pathSum p = new pathSum();
+        // TreeNode root = new TreeNode(5);
 
     }
 
