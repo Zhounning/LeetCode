@@ -28,7 +28,6 @@ public class strToInt {
                     break;
                 }
             }
-
             if (!isPositive) {
                 res = 0 - res;
             }

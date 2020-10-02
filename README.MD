@@ -6,7 +6,7 @@
 * lintcode是lintcode当中的题目
 * nowcoder是牛客网上的题目
 
-## 不懂的题
+## 算法数据结构不懂的题
 * [剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/)
 * [快幂](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/)
 * [表示数值的字符串](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/)
@@ -21,3 +21,9 @@
 * [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/)
 * [求1+2+…+n](https://leetcode-cn.com/problems/qiu-12n-lcof/)
 * [把字符串转换成整数](https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/)
+* [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+
+## Mysql不懂的题目
+* [部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)
+* [上升的温度](https://leetcode-cn.com/problems/rising-temperature/)
+* [行程和用户](https://leetcode-cn.com/problems/trips-and-users/)
