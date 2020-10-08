@@ -8,39 +8,37 @@ public class minStack {
 
     public void push(int node) {
         mystack.push(node);
-        //判断最小值的push
+        // 判断最小值的push
         if (minstack.isEmpty()) {
             minstack.push(node);
         } else {
-            if (node<=minstack.peek()) {
+            if (node <= minstack.peek()) {
                 minstack.push(node);
             }
         }
 
     }
-    
+
     public void pop() {
         if (!mystack.isEmpty()) {
             int res = mystack.pop();
-            if (res==minstack.peek()) {
+            if (res == minstack.peek()) {
                 minstack.pop();
             }
         }
     }
-    
+
     public int top() {
-        //这里如果为空很不好处理，不知道乍整
-       try {
-           int res =  mystack.peek();
-           return res;
-       } catch (Exception e) {
-           //TODO: handle exception
+        // 这里如果为空很不好处理，不知道乍整
+        try {
+            int res = mystack.peek();
+            return res;
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return mystack.peek();
     }
-    
+
     public int min() {
         return minstack.peek();
     }

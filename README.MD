@@ -22,6 +22,9 @@
 * [求1+2+…+n](https://leetcode-cn.com/problems/qiu-12n-lcof/)
 * [把字符串转换成整数](https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/)
 * [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+* [环形链表II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+* [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
+* [翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/)
 
 ## Mysql不懂的题目
 * [部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)
