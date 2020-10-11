@@ -25,6 +25,8 @@
 * [环形链表II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 * [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
 * [翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/)
+* [下一个数](https://leetcode-cn.com/problems/closed-number-lcci/)
+* [配对交换](https://leetcode-cn.com/problems/exchange-lcci/)
 
 ## Mysql不懂的题目
 * [部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)

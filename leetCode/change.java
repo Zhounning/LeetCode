@@ -23,8 +23,8 @@ public class change {
 
     public static void main(String[] args) {
         change c = new change();
-        int[] coins = { 3 };
-        int amount = 2;
+        int[] coins = {1,2,5,10};
+        int amount = 10;
         System.out.println(c.Change(amount, coins));
     }
 }
