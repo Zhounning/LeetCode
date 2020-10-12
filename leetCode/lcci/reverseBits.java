@@ -1,4 +1,4 @@
-package leetCode.Cracking;
+package leetCode.lcci;
 
 public class reverseBits {
     public int reverseBits(int num) {

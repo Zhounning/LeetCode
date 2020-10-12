@@ -1,4 +1,4 @@
-package leetCode.Cracking;
+package leetCode.lcci;
 
 import java.util.Arrays;
 

@@ -32,3 +32,4 @@
 * [部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)
 * [上升的温度](https://leetcode-cn.com/problems/rising-temperature/)
 * [行程和用户](https://leetcode-cn.com/problems/trips-and-users/)
+* [换座位](https://leetcode-cn.com/problems/exchange-seats/)

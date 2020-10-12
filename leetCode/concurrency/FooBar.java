@@ -1,4 +1,4 @@
-package leetCode;
+package leetCode.concurrency;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
