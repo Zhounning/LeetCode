@@ -28,8 +28,16 @@
 * [下一个数](https://leetcode-cn.com/problems/closed-number-lcci/)
 * [配对交换](https://leetcode-cn.com/problems/exchange-lcci/)
 
+---
+
 ## Mysql不懂的题目
 * [部门工资前三高的所有员工](https://leetcode-cn.com/problems/department-top-three-salaries/)
 * [上升的温度](https://leetcode-cn.com/problems/rising-temperature/)
 * [行程和用户](https://leetcode-cn.com/problems/trips-and-users/)
 * [换座位](https://leetcode-cn.com/problems/exchange-seats/)
+
+---
+## 多线程不懂的题
+* [打印零与奇偶数](https://leetcode-cn.com/problems/print-zero-even-odd/)
+* [H2O的生成](https://leetcode-cn.com/problems/building-h2o/)
+
